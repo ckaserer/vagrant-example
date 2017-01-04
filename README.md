@@ -1,11 +1,18 @@
 #Vagrant-Example
 
-**Why no CI?** "We[Travis] do not support running VirtualBox inside any of our compute environments and currently have no plans to support it." (solarce) </br>
+**Why no CI?** "Travis does not support running VirtualBox inside any of its compute environments and currently has no plans to support it." (solarce) </br>
 Further detail can be found here: [https://github.com/travis-ci/travis-ci/issues/6060]()
+
+## Plugins used
+
+**vagrant-vbguest** is a Vagrant plugin which automatically installs the host's VirtualBox Guest Additions on the guest system. Take a look at the github page of the plugin here at [https://github.com/dotless-de/vagrant-vbguest]()
+
+
+**vagrant-hostmanager** is a plugin that manages the hosts file on guest machines (and optionally the host). Its goal is to enable resolution of multi-machine environments deployed with a cloud provider where IP addresses are not known in advance. Take a look at the github page of the plugin here at [https://github.com/devopsgroup-io/vagrant-hostmanager]()
 
 ---
 
-###Vagrantfile
+## Vagrantfile
 
 ```ruby
 #!/bin/ruby
