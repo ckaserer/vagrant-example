@@ -8,6 +8,7 @@ $MEMORY = 512
 $CPUEXECUTIONCAP = 60
 $IP = "192.168.0.2"
 $BASEOS = "centos/7"
+$SSH=2222 # must be unique & available on your host. If you have multiple VMs, assign different ssh ports to each
 #########################
 
 Vagrant.configure(2) do |config|
@@ -15,6 +16,9 @@ Vagrant.configure(2) do |config|
 
   # Network
   config.vm.network "private_network", ip: $IP
+
+  # SSH 
+  config.vm.network "forwarded_port", guest: 22, host: $SSH, id: 'ssh'
 
   #CPU / Memory settings
   config.vm.provider "virtualbox" do |vb|
